@@ -22,7 +22,7 @@
       name: "深鉢形土器",
       site: "（サンプル）東北地方の縄文遺跡",
       potColor: "#A6623A",
-      imageUrl:"assets/img/kaen.webp",
+      imageUrl:"https://private-user-images.githubusercontent.com/142230249/502802361-1047f4cf-2718-44b7-b6ed-995fa41f04de.webp?jwt=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJnaXRodWIuY29tIiwiYXVkIjoicmF3LmdpdGh1YnVzZXJjb250ZW50LmNvbSIsImtleSI6ImtleTUiLCJleHAiOjE3NjA3NTA0ODAsIm5iZiI6MTc2MDc1MDE4MCwicGF0aCI6Ii8xNDIyMzAyNDkvNTAyODAyMzYxLTEwNDdmNGNmLTI3MTgtNDRiNy1iNmVkLTk5NWZhNDFmMDRkZS53ZWJwP1gtQW16LUFsZ29yaXRobT1BV1M0LUhNQUMtU0hBMjU2JlgtQW16LUNyZWRlbnRpYWw9QUtJQVZDT0RZTFNBNTNQUUs0WkElMkYyMDI1MTAxOCUyRnVzLWVhc3QtMSUyRnMzJTJGYXdzNF9yZXF1ZXN0JlgtQW16LURhdGU9MjAyNTEwMThUMDExNjIwWiZYLUFtei1FeHBpcmVzPTMwMCZYLUFtei1TaWduYXR1cmU9NDlmZWU4OTNmZjE2YWNmMThhMjY2Zjk1OGYzN2E1ZjIxNDM4NDUzODY0YjFlNWJmOGM4MmUyNWI5NTM0NTFlNiZYLUFtei1TaWduZWRIZWFkZXJzPWhvc3QifQ.nZ1ntmaIKbuNgxkqze8dR72hWpj5f6Yly_dKW8hRoU8",
       description: "（サンプル）深い鉢形で、煮炊きに適したと考えられる土器。縄目文様のパターンや焼成の色ムラが見どころです。",
       question: {
         text: "深鉢形土器の“深い”形は主に何に向いていたと考えられる？",
