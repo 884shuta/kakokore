@@ -5,7 +5,7 @@
       name: "火焔型土器",
       site: "（サンプル）新潟県周辺の縄文遺跡",
       potColor: "#C0763A",
-      imageUrl:"assets/img/kaen.webp",
+      imageUrl:"assets/img/2.webp",
       description: "（サンプル）口縁部に炎のような装飾が見られる豪壮な土器。展示では造形のリズムと左右対称の美しさに注目してみましょう。",
       question: {
         text: "火焔型土器の特徴として最も適切なのはどれ？",
