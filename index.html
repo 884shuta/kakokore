@@ -7,10 +7,26 @@
     <link rel="stylesheet" href="assets/css/style.css"/>
     <script defer src="assets/js/state.js"></script>
     <script defer>
-      document.addEventListener('DOMContentLoaded', () => {
-        const {ARTIFACTS, isSolved, solvedCount, potIMG} = window.JomonQuiz;
+      document.addEventListener('DOMContentLoaded', async () => {
+        const quiz = window.JomonQuiz;
+        await quiz.ready;
+
+        if(quiz.loadError){
+          console.error('問題データを読み込めませんでした。', quiz.loadError);
+        }
+
+        const {ARTIFACTS, isSolved, solvedCount, potIMG} = quiz;
         const grid = document.querySelector('#grid');
         const iconGrid = document.querySelector('#iconGrid');
+
+        if(!ARTIFACTS.length){
+          if(iconGrid){ iconGrid.innerHTML = ''; }
+          grid.innerHTML = '<p class="muted">問題データが設定されていません。管理者にお問い合わせください。</p>';
+          document.querySelector('#count').textContent = '0/0';
+          document.querySelector('#barfill').style.width = '0%';
+          return;
+        }
+
         const total = ARTIFACTS.length;
         const solved = solvedCount();
         document.querySelector('#count').textContent = `${solved}/${total}`;
@@ -20,7 +36,7 @@
         if(iconGrid){ iconGrid.innerHTML = ''; }
         grid.innerHTML = '';
 
-        sortedById.forEach(art => { //これに変更
+        sortedById.forEach(art => {
           const card = document.createElement('div');
           card.className = 'card';
           card.setAttribute('data-artifact-id', art.id);

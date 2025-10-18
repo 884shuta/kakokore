@@ -10,7 +10,12 @@
     <link rel="stylesheet" href="assets/css/style.css" />
     <script defer src="assets/js/state.js"></script>
     <script defer>
-        document.addEventListener('DOMContentLoaded', () => {
+        document.addEventListener('DOMContentLoaded', async () => {
+        await JomonQuiz.ready;
+        if(JomonQuiz.loadError){
+          console.error('問題データを読み込めませんでした。', JomonQuiz.loadError);
+        }
+
         const id = JomonQuiz.param('id');
         const art = JomonQuiz.getArtifact(id);
         if(!art){
@@ -28,7 +33,7 @@
     </script>
 </head>
   <body>
-    <div class="container">
+    <div id="content" class="container">
       <header class="site">
         <h1 id="name">資料</h1>
         <a href="./index.html" class="badge">図鑑へ</a>
