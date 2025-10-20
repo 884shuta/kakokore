@@ -56,18 +56,16 @@
   // expose
  window.JomonQuiz = {
     ARTIFACTS,
-    getArtifact(id){ return ARTIFACTS.find(a => a.id === id) || null; },
-    all(){ return ARTIFACTS.slice(); },
-    isSolved(id){ return localStorage.getItem("jomon:solved:"+id) === "1"; },
-    setSolved(id, v=true){ localStorage.setItem("jomon:solved:"+id, v ? "1":""); },
-    clearAll(){ ARTIFACTS.forEach(a => localStorage.removeItem("jomon:solved:"+a.id)); },
-    //solvedCount(){ return ARTIFACTS.filter(a => this.isSolved(a.id)).length; },
-    solvedCount(){ return ARTIFACTS.filter(a => window.JomonQuiz.isSolved(a.id)).length; },
-    // tiny util
-    qs(sel, root=document){ return root.querySelector(sel); },
-    qsa(sel, root=document){ return Array.from(root.querySelectorAll(sel)); },
-    param(name){ return new URLSearchParams(location.search).get(name); },
-    potIMG({src, solved=false, alt="縄文土器"}) {
+    getArtifact(id){ return ARTIFACTS.find(a => a.id === id) || null; },//IDに対応する土器オブジェクトを返す
+    // all(){ return ARTIFACTS.slice(); },//全土器オブジェクトの配列を返す
+    isSolved(id){ return localStorage.getItem("jomon:solved:"+id) === "1"; },//IDに対応する土器が解答済みかどうかを返す
+    setSolved(id, v=true){ localStorage.setItem("jomon:solved:"+id, v ? "1":""); },//IDに対応する土器の解答済み状態を設定する
+    clearAll(){ ARTIFACTS.forEach(a => localStorage.removeItem("jomon:solved:"+a.id)); },//全土器の解答済み状態をクリアする
+    solvedCount(){ return ARTIFACTS.filter(a => window.JomonQuiz.isSolved(a.id)).length; },//解答済みの土器の数を返す
+    qs(sel, root=document){ return root.querySelector(sel); },//セレクタに対応する最初の要素を返す
+    qsa(sel, root=document){ return Array.from(root.querySelectorAll(sel)); },//セレクタに対応するすべての要素を配列で返す
+    param(name){ return new URLSearchParams(location.search).get(name); },//URLクエリパラメータの値を返す
+    potIMG({src, solved=false, alt="縄文土器"}) {//土器画像のHTMLを返す
       const cls = solved ? "pot solved" : "pot unsolved";
       return `<img class="${cls}" src="${src}" alt="${alt}" loading="lazy" decoding="async">`;
     }
